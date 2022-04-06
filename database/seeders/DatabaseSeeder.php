@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement("TRUNCATE TABLE {$posts} RESTART IDENTITY CASCADE");
         $this->call(CatagorySeeder::class);
         $this->call(SubcategorieSeeder::class);
 
