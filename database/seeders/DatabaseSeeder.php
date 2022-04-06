@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('ALTER posts DISABLE TRIGGER ALL;');
+        DB::statement("TRUNCATE TABLE {$posts} RESTART IDENTITY CASCADE");
         $this->call(CatagorySeeder::class);
         $this->call(SubcategorieSeeder::class);
-        DB::statement('ALTER posts DISABLE TRIGGER ALL;');
+
         
       
 
