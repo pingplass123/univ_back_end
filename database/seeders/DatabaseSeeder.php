@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('ALTER your_table DISABLE TRIGGER ALL;');
+        DB::statement('ALTER posts DISABLE TRIGGER ALL;');
         $this->call(CatagorySeeder::class);
         $this->call(SubcategorieSeeder::class);
-        DB::statement('ALTER your_table DISABLE TRIGGER ALL;');
+        DB::statement('ALTER posts DISABLE TRIGGER ALL;');
         
       
 
