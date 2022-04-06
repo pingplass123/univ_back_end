@@ -1,0 +1,41 @@
+﻿id,catagoriesID,sub_name,description,urlPhoto
+1,1,Photoshop,How to use tools and techniques for designing and editting images in Photoshop,https://cdn-icons-png.flaticon.com/512/5968/5968520.png
+2,1,Adobe illustrator,"How to use tools and techniques for drawing graphics, editing vectors and other elements to be used with Adobe illustrator",https://cdn-icons.flaticon.com/png/512/5611/premium/5611037.png?token=exp=1648216102~hmac=634164ca7892f39438aced19cee4c707
+3,1,3D Modeling,"Techniques and methods for creating 3D models to represent objects in 3D format for use in the video game, architecture, product development, etc. with various software",https://cdn-icons-png.flaticon.com/512/2818/2818038.png
+4,1,Web Design,"Techniques, methods and tools for web designing",https://cdn-icons-png.flaticon.com/512/3940/3940056.png
+5,1,Digital Painting,Includes applications and techniques for digital painting,https://cdn-icons.flaticon.com/png/512/3940/premium/3940120.png?token=exp=1648216717~hmac=4cf661b4663445e8feb32cfaf3a9f12b
+6,2,Python,Python tutorial and how to applied,https://cdn-icons-png.flaticon.com/512/5968/5968350.png
+7,2,C,C tutorial and how to applied,https://cdn-icons.flaticon.com/png/512/3665/premium/3665923.png?token=exp=1648216852~hmac=ee81ed350ed098867d0d7404225939b2
+8,2,Java,Java tutorial and how to applied,https://cdn-icons-png.flaticon.com/512/226/226777.png
+9,2,SQL,Includes SQL tutorial and techniques for use with database,https://cdn-icons.flaticon.com/png/512/4548/premium/4548547.png?token=exp=1648217148~hmac=25261485d77d65408f598af322e3a8b7
+10,2,Web Development,Includes tools and tutorial for web development,https://cdn-icons-png.flaticon.com/512/2282/2282188.png
+11,3,Digital Marketing,"Techniques, tools, skills and software needed for digital marketing",https://cdn-icons.flaticon.com/png/512/1968/premium/1968750.png?token=exp=1648217399~hmac=ad066a05171704acd868a6b84117d4a4
+12,3,SEO,Techniques for making the website effective and support to rank on Google and have more viewers,https://cdn-icons.flaticon.com/png/512/3607/premium/3607459.png?token=exp=1648217628~hmac=3d62343ad5d6dc4cba6e700a362bb818
+13,3,Markerting Strategy,Learn effective strategies that can increase sales and reduce costs while still maintain product quality,https://cdn-icons.flaticon.com/png/512/2888/premium/2888393.png?token=exp=1648217663~hmac=7fa0912e49d550222570f3eb9dab5110
+14,3,Google Analytics,Technique that can measure website performance by analyzing the insights of the customers who visit the website.,https://cdn-icons-png.flaticon.com/512/2920/2920349.png
+15,3,Google Ads (Adwords),"Online advertising guidelines and solutions that businesses used to promote their products and services on Google Search, YouTube and websites.",https://cdn-icons.flaticon.com/png/512/2875/premium/2875421.png?token=exp=1648217804~hmac=e4c5ddb36c4bcd79520bd8f5791be52d 
+16,4,Windows,Learn techniques for using the Window operating system,https://cdn-icons.flaticon.com/png/512/2504/premium/2504927.png?token=exp=1648217853~hmac=8b4543098a14b7c36ba230c0d9dd9027
+17,4,Cyber Security,Learn how to attack and how to prevent in different ways,https://cdn-icons.flaticon.com/png/512/4290/premium/4290002.png?token=exp=1648217891~hmac=44c2f8d18debabb810845ab4859c4889
+18,4,Amazon AWS,"Learn techniques for using AWS, Cloud Computing, where service providers can allocate resources as user-specified and available to them.",http://hub.ehizua.com/wp-content/uploads/2021/02/AWS-Cloud-Logo-1024x826.png
+19,4,Linux,Learn techniques for using the Linux operating system,https://cdn-icons-png.flaticon.com/512/6124/6124995.png
+20,4,Kubernetes,"Tutorial on how to use Kubernetes to help with Automating Deployment Automating Resource Management, Scaling Applications and Containerized Applications to optimize container management.",https://upload.wikimedia.org/wikipedia/commons/0/00/Kubernetes_%28container_engine%29.png 
+21,5,Memory,Learn about techniques for using memory how to optimize performance and suitable for developing projects,https://cdn-icons.flaticon.com/png/512/3211/premium/3211329.png?token=exp=1648220398~hmac=eccb86974a7afa8d7a2aaa4885f6e6af
+22,5,Time Management,Learn about time management for project development to be completed according to goals,https://cdn-icons.flaticon.com/png/512/3842/premium/3842536.png?token=exp=1648216212~hmac=fd965fb250c7c2606512f9ad797cc09e
+23,5,Leadership,Technical and leadership skills that ia essential for success in the workplace,https://cdn-icons-png.flaticon.com/512/3985/3985100.png
+24,5,Communication Skills,Essential communication skills for career success,https://cdn-icons-png.flaticon.com/512/3050/3050525.png
+25,5,Personal Productivity,learning personal productivity for improve themselves to have higher value which affects the success of living in the future,https://cdn-icons.flaticon.com/png/512/1462/premium/1462222.png?token=exp=1648216577~hmac=1edc18c83df443927f8360cb8825b6ba
+26,6,Project Management,Perfect project management skills,https://cdn-icons-png.flaticon.com/512/2503/2503732.png
+27,6,Business Analysis,"Skills, duties and responsibilities of business analyst",https://cdn-icons.flaticon.com/png/512/2041/premium/2041814.png?token=exp=1648216695~hmac=d577beee4483024f8dabfcb473e33ae7
+28,6,Business fundamentals,Basic business knowledge that professionals in every industry should know.,https://cdn-icons-png.flaticon.com/512/1055/1055644.png
+29,6,Blockchain,Learn about technology and transactions in the digital age.,https://cdn-icons-png.flaticon.com/512/887/887739.png
+30,6,Business Strategy,Techniques for planning a business or strategy.,https://cdn-icons-png.flaticon.com/512/4149/4149676.png
+31,7,Video Production,Learn how to make a complete video production process.,https://cdn-icons-png.flaticon.com/512/1179/1179069.png
+32,7,After Effects,learn how to use tools and techniques of After Effects,https://cdn-icons-png.flaticon.com/512/5968/5968428.png
+33,7,Portrait Photography,"Photography techniques, how to choose a lens or cameras, simple composition and other tricks to make portrait photography completed",https://cdn-icons.flaticon.com/png/512/4475/premium/4475738.png?token=exp=1648216879~hmac=3c9d758373a94e0ce7cb6353a1c0b220
+34,7,Digital Camera functionality,Learn the techniques of using photographic equipment.,https://cdn-icons.flaticon.com/png/512/2985/premium/2985659.png?token=exp=1648216737~hmac=21db37e2e31f5a2f3c1a32ab054935d1
+35,7,Adobe,Learn how to use and techniques for various Adobe program,https://cdn-icons-png.flaticon.com/512/888/888835.png
+36,8,Music Production,"One of the methods and processes of creating music from the process of recording sound, organizing, editing to make the work the most perfect.",https://cdn-icons-png.flaticon.com/512/6348/6348571.png
+37,8,Logic Pro X,Includes techniques for using Logic Pro X,https://ph-live-01.slatic.net/p/a64c1d1178dac857745aaace68a66781.png
+38,8,Music Composition,"Learn about how to compose lyrics, melodies and write notes, chords, lines, harmonize to make beautiful songs for listening",https://cdn-icons-png.flaticon.com/512/6287/6287775.png
+39,8,Music Mixing,Learn how to balance the different sounds in a song. Both singing and all kinds of instruments to stay in the right place,https://cdn-icons.flaticon.com/png/512/1778/premium/1778704.png?token=exp=1648217131~hmac=5bffd1ac26f160dcee977e44ba5e54ec
+40,8,Theory Music,Basic music theory for beginners ,https://cdn-icons.flaticon.com/png/512/2995/premium/2995038.png?token=exp=1648217284~hmac=619becf9e06ddbd1d99eb7cae939dfac
