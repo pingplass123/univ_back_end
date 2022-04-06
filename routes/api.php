@@ -36,7 +36,6 @@ Route::controller(CatagoryController::class)->group(function(){
     // Route::get('softwareCategory', [CatagoryController::class, 'queryCategorySoftware']);
     // Route::get('persernalCategory', [CatagoryController::class, 'queryCategoryPersernal']);
     // Route::get('businessCategory', [CatagoryController::class, 'queryCategoryBusiness']);
-    Route::resource('posts', PostController::class);
 });
 
         
@@ -44,5 +43,5 @@ Route::controller(CatagoryController::class)->group(function(){
 // Protect
 Route::middleware('auth:sanctum')->group( function () {
     Route::resource('comment',CommentController::class);
-    
+    Route::resource('posts', PostController::class);
 });
