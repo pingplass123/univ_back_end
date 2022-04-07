@@ -17,6 +17,12 @@ use App\Http\Controllers\API\CatagoryController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+//Public Route Login and Register
+Route::controller(RegisterController::class)->group(function(){
+    Route::post('register', 'register');
+    Route::post('login', 'login');
+});
   
 //Public Route
 Route::controller(CatagoryController::class)->group(function(){
