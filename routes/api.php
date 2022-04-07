@@ -19,29 +19,27 @@ use App\Http\Controllers\API\CatagoryController;
 */
   
 //Public Route
-Route::controller(RegisterController::class)->group(function(){
-
-    Route::post('register', 'register');
-    Route::post('login', 'login');
-
-});
-
-//Public Route API Category
 Route::controller(CatagoryController::class)->group(function(){
 
     Route::resource('catagory', CatagoryController::class);
     Route::get('subcategory', [CatagoryController::class, 'queryCategoryDesign']);
-    // Route::get('developCategory', [CatagoryController::class, 'queryCategoryDevelopment']);
-    // Route::get('maketingCategory', [CatagoryController::class, 'queryCategoryMaketing']);
-    // Route::get('softwareCategory', [CatagoryController::class, 'queryCategorySoftware']);
-    // Route::get('persernalCategory', [CatagoryController::class, 'queryCategoryPersernal']);
-    // Route::get('businessCategory', [CatagoryController::class, 'queryCategoryBusiness']);
+   
+
+});
+
+//Public Route API Post
+Route::controller(PostController::class)->group(function() {
+    Route::get('/posts', [PostController::class, 'index']);
+    Route::get('/posts/{id}', [PostController::class, 'show']);
+
 });
 
         
 
-// Protect
+// Protect Route
 Route::middleware('auth:sanctum')->group( function () {
+    Route::post('/posts/create', [PostController::class, 'store']);
+    Route::resource('/posts', PostController::class);
     Route::resource('comment',CommentController::class);
-    Route::resource('posts', PostController::class);
+    
 });
