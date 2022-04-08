@@ -45,7 +45,7 @@ Route::controller(PostController::class)->group(function() {
 // Protect Route
 Route::middleware('auth:sanctum')->group( function () {
     Route::post('/posts/create', [PostController::class, 'store']);
-    Route::resource('/posts', PostController::class);
+    // Route::resource('/posts', PostController::class);
     Route::resource('comment',CommentController::class);
     
 });
