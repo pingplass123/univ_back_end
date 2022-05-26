@@ -43,6 +43,8 @@ Route::controller(PostController::class)->group(function() {
 Route::controller(CommentController::class)->group(function() {
     Route::post('/comment', [CommentController::class, 'index']);
     Route::get('/comment{id}',[CommentController::class, 'show']);
+    // Route::get('/comment{id}',[CommentController::class, 'show']);
+
 });
         
 
