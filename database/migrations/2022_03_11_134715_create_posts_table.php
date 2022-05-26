@@ -21,8 +21,9 @@ return new class extends Migration
             $table->foreign('sub_id')->references('id')->on('subcategories');
             $table->string('title');
             $table->text('body');
-            $table->json('hastag');
-            $table->string('image');
+            $table->json('hastag')->nullable();
+            $table->string('nameCreate');
+            $table->longtext('image');
             $table->timestamps();
         });
     }

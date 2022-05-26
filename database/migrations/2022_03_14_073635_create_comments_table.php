@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('postID')->references('id')->on('posts');
             $table->string('description');
             $table->decimal('score');
+            $table->string('nameCreate');
             $table->timestamps();
         });
     }
