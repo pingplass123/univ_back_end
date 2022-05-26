@@ -20,6 +20,7 @@ class CommentResource extends JsonResource
             'postID'=> $this->postID,
             'description' => $this->description,
             'score' => $this->score,
+            'nameCreate' => $this->nameCreate,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
 
