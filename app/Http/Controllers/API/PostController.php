@@ -19,12 +19,13 @@ class PostController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
-    
-        return $this->sendResponse(PostResource::collection($posts), 'Post retrieved successfully.');
+        $success['all_Post'] = Post::where('sub_id', '=', $request->sub_id)->get();
+        return $this->sendResponse($success, 'Get all post records.');
     }
+
+    
 
     /**
      * Store a newly created resource in storage.
@@ -41,15 +42,10 @@ class PostController extends BaseController
             'body' => 'required',
             'sub_id' => 'required',
             'hastag' => 'required',
-            // 'image'   => 'required|max:10000',
+            'image'   => 'bail|required|string',
             
         ]);
-    //    dd($request);
-        
-        $image = $request->file('image');
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images'), $imageName);
-        // dd($new_name);
+
    
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
@@ -60,8 +56,9 @@ class PostController extends BaseController
             'title' => request('title'),
             'sub_id' => request('sub_id'),
             'hastag' => request('hastag'),
-            'image' => $imageName,
-            'userID' => Auth::id()
+            'image' => request('image'),
+            'userID' => Auth::id(),
+            'nameCreate' => Auth::user()->name,
         ]);
 
         

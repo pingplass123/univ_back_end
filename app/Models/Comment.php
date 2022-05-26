@@ -10,7 +10,7 @@ class Comment extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'description', 'score','userID','postID'
+        'description', 'score','userID','postID','nameCreate'
     ];
     public function user(){
         return $this->belongsTo(User::Class,'userID');

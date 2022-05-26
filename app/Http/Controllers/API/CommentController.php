@@ -21,10 +21,10 @@ class CommentController extends BaseController
      * @return \Illuminate\Http\Response
      */
     
-    public function index()
+    public function index(Request $request)
     {
-        $comment = Comment::all();
-        return $this->sendResponse(CommentResource::collection($comment), 'Comment retrieved successfully.');
+        $success['all_comment'] = Comment::where('postID', '=', $request->postID)->get();
+        return $this->sendResponse($success, 'Get all comment post records.');
     }
 
     /**
@@ -48,14 +48,11 @@ class CommentController extends BaseController
         }
         
         $comment = Comment::create([
-            
             'postID'=> request('postID',$request),
-            //'postID' => request('postID'),
             'description' => request('description'),
             'score' => request('score'),
-            'userID' => Auth::id()
-           
-
+            'userID' => Auth::id(),
+            'nameCreate' => Auth::user()->name,
         ]);
     
         

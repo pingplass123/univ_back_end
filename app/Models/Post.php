@@ -18,7 +18,7 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'body', 'userID','sub_id','image','hastag'
+        'title', 'body', 'userID','sub_id', 'hastag','image', 'nameCreate'
     ];
     protected $casts = [
         'hastag' => 'array',

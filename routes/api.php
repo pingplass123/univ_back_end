@@ -17,35 +17,37 @@ use App\Http\Controllers\API\CatagoryController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-//Public Route Login and Register
-Route::controller(RegisterController::class)->group(function(){
-    Route::post('register', 'register');
-    Route::post('login', 'login');
-});
   
 //Public Route
+Route::controller(RegisterController::class)->group(function(){
+
+    Route::post('register', 'register');
+    Route::post('login', 'login');
+
+});
+
+//Public Route API Category
 Route::controller(CatagoryController::class)->group(function(){
-
-    Route::resource('catagory', CatagoryController::class);
+    Route::resource('category', CatagoryController::class);
     Route::get('subcategory', [CatagoryController::class, 'queryCategoryDesign']);
-   
-
 });
 
 //Public Route API Post
 Route::controller(PostController::class)->group(function() {
-    Route::get('/posts', [PostController::class, 'index']);
+    Route::post('/posts', [PostController::class, 'index']);
     Route::get('/posts/{id}', [PostController::class, 'show']);
 
 });
 
+//Public Route API Comment
+Route::controller(CommentController::class)->group(function() {
+    Route::post('/comment', [CommentController::class, 'index']);
+    Route::get('/comment{id}',[CommentController::class, 'show']);
+});
         
 
-// Protect Route
+// Protect
 Route::middleware('auth:sanctum')->group( function () {
     Route::post('/posts/create', [PostController::class, 'store']);
-    // Route::resource('/posts', PostController::class);
-    Route::resource('comment',CommentController::class);
-    
+    Route::post('/comment/create', [CommentController::class, 'store']);
 });
