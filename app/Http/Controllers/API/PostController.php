@@ -85,12 +85,10 @@ class PostController extends BaseController
         //dd($user);
         $post = Post::find($id);
         
-  
         if (is_null($post)) {
             return $this->sendError('Post not found.');
         }
-   
-        return $this->sendResponse(new PostResource($post), 'Post retrieved successfully.');
+        return $this->sendResponse(PostResource::collection($post), 'Post retrieved successfully.');
     }
     
     /**
