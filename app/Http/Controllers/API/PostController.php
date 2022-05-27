@@ -21,8 +21,12 @@ class PostController extends BaseController
      */
     public function index(Request $request)
     {
-        $success['all_Post'] = Post::where('sub_id', '=', $request->sub_id)->get();
-        return $this->sendResponse($success, 'Get all post records.');
+        // $success['all_Post'] = Post::where('sub_id', '=', $request->sub_id)->get();
+        // return $this->sendResponse($success, 'Get all post records.');
+
+        $success = Post::where('sub_id', '=', $request->sub_id)->get();
+        // return $this->sendResponse($success, 'Get all post records.');
+        return $this->sendResponse(PostResource::collection($success), 'Post retrieved successfully.');
     }
 
     
