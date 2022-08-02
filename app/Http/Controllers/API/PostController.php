@@ -32,7 +32,7 @@ class PostController extends BaseController
 
     public function popularPost()
     {
-        $comment = Comment::all()->get();
+        $comment = Comment::all();
         return $this->sendResponse($comment, 'Get all records.');
     }
 
