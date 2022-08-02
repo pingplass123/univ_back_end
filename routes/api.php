@@ -34,7 +34,7 @@ Route::controller(CatagoryController::class)->group(function(){
 
 //Public Route API Post
 Route::controller(PostController::class)->group(function() {
-    Route::post('/posts/{sub_id}', [PostController::class, 'index']);
+    Route::post('/posts', [PostController::class, 'index']);
     Route::get('/posts/{id}', [PostController::class, 'show']);
     ROute::get('/post/popular', [PostController::class, 'popularPost']);
 });
