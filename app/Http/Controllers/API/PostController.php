@@ -7,6 +7,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Comment;
 use Validator;
 use Auth;
 use Illuminate\Support\Facades\Storage;
@@ -27,6 +28,12 @@ class PostController extends BaseController
         $success = Post::where('sub_id', '=', $request->sub_id)->get();
         // return $this->sendResponse($success, 'Get all post records.');
         return $this->sendResponse(PostResource::collection($success), 'Post retrieved successfully.');
+    }
+
+    public function popularPost()
+    {
+        $comment = Comment::all()->get();
+        return $this->sendResponse($comment, 'Get all records.');
     }
 
     
@@ -64,11 +71,6 @@ class PostController extends BaseController
             'userID' => Auth::id(),
             'nameCreate' => Auth::user()->name,
         ]);
-
-        
-        
-        
-    
         
         return $this->sendResponse(new PostResource($post), 'Post created successfully.');
     } 
@@ -90,6 +92,7 @@ class PostController extends BaseController
         }
         return $this->sendResponse(new PostResource($post), 'Post retrieved successfully.');
     }
+
     
     /**
      * Update the specified resource in storage.
