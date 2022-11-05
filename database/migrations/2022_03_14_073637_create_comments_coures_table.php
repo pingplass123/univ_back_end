@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('userID')->unsigned();
             $table->foreign('userID')->references('id')->on('users');
-            $table->bigInteger('coures')->unsigned();
+            $table->bigInteger('couresID')->unsigned();
             $table->foreign('couresID')->references('id')->on('coures');
             $table->string('description');
             $table->decimal('score');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('couresComment');
     }
 };
