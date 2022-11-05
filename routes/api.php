@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\PostController;
+use App\Http\Controllers\API\CouresController;
 use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\CatagoryController;
   
@@ -20,10 +21,8 @@ use App\Http\Controllers\API\CatagoryController;
   
 //Public Route
 Route::controller(RegisterController::class)->group(function(){
-
     Route::post('register', 'register');
     Route::post('login', 'login');
-
 });
 
 //Public Route API Category
@@ -42,14 +41,25 @@ Route::controller(PostController::class)->group(function() {
 //Public Route API Comment
 Route::controller(CommentController::class)->group(function() {
     Route::post('/comment', [CommentController::class, 'index']);
-    Route::get('/comment{id}',[CommentController::class, 'show']);
+    Route::get('/comment/{id}',[CommentController::class, 'show']);
     // Route::get('/comment{id}',[CommentController::class, 'show']);
-
 });
-        
 
-// Protect
+//Public Route API Course
+Route::controller(CouresController::class)->group(function() {
+    Route::post('/course', [CouresController::class, 'index']);
+    Route::get('/course/{id}', [CouresController::class, 'show']);
+    ROute::get('/course/popular', [CouresController::class, 'popularPost']);
+});
+
+        
+// Protect Route
 Route::middleware('auth:sanctum')->group( function () {
     Route::post('/posts/create', [PostController::class, 'store']);
     Route::post('/comment/create', [CommentController::class, 'store']);
+    Route::post('/posts/edit/{id}', [PostController::class, 'update']);
+    Route::post('/course/create', [CouresController::class, 'store']);
+    // Route::post('/comment/create/course'. [CommentController::class, 'store']);
+    Route::post('/course/edit/{id}', [CouresController::class, 'update']);
+
 });
