@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Resources\CommentResource;
 use App\Models\Post;
-use App\Models\CouresComment;
+use App\Models\Comment;
 use Validator;
 use Auth;
 
@@ -23,8 +23,8 @@ class CommentController extends BaseController
     
     public function index(Request $request)
     {
-        $success['all_comment'] = CouresComment::where('couresID', '=', $request->couresID)->get();
-        return $this->sendResponse($success, 'Get all comment course records.');
+        $success['all_comment'] = Comment::where('postID', '=', $request->postID)->get();
+        return $this->sendResponse($success, 'Get all comment post records.');
     }
 
     /**
@@ -47,8 +47,8 @@ class CommentController extends BaseController
             return $this->sendError('Validation Error.', $validator->errors());       
         }
         
-        $comment = CouresComment::create([
-            'couresID'=> request('couresID',$request),
+        $comment = Comment::create([
+            'postID'=> request('postID',$request),
             'description' => request('description'),
             'score' => request('score'),
             'userID' => Auth::id(),
@@ -68,7 +68,7 @@ class CommentController extends BaseController
      */
     public function show($id)
     { 
-        $comment = CouresComment::find($id);
+        $comment = Comment::find($id);
         
         if (is_null($comment)) {
             return $this->sendError('Comment not found.');
@@ -116,7 +116,7 @@ class CommentController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CouresComment $comment)
+    public function destroy(Comment $comment)
     {
         $comment->delete();
    
