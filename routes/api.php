@@ -7,6 +7,7 @@ use App\Http\Controllers\API\PostController;
 use App\Http\Controllers\API\CouresController;
 use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\CatagoryController;
+use App\Http\Controllers\API\CommentCourseController;
   
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,9 @@ Route::controller(PostController::class)->group(function() {
 Route::controller(CommentController::class)->group(function() {
     Route::post('/comment', [CommentController::class, 'index']);
     Route::get('/comment/{id}',[CommentController::class, 'show']);
-    // Route::get('/comment{id}',[CommentController::class, 'show']);
+    Route::post('course/comment', [CommentCourseController::class, 'index']);
+    Route::get('course/comment/{id}',[CommentCourseController::class, 'show']);
+
 });
 
 //Public Route API Course
@@ -59,7 +62,7 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/comment/create', [CommentController::class, 'store']);
     Route::post('/posts/edit/{id}', [PostController::class, 'update']);
     Route::post('/course/create', [CouresController::class, 'store']);
-    // Route::post('/comment/create/course'. [CouresCommentController::class, 'store']);
+    Route::post('/comment/create/course'. [CommentCourseController::class, 'store']);
     Route::post('/course/edit/{id}', [CouresController::class, 'update']);
 
 });
