@@ -50,7 +50,8 @@ class RegisterController extends BaseController
                 // TODO
             // } 
             
-            $user = Auth::user(); 
+            $user = Auth::user();
+            dd($user); 
             $success['token'] =  $user->createToken('MyApp')->plainTextToken; 
             $success['name'] =  $user->name;
             $success['Id'] = $user->Id;
