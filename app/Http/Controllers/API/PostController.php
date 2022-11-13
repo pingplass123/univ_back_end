@@ -136,8 +136,8 @@ class PostController extends BaseController
 
     public function getPost(Request $request)
     {
-        $success = Coures::where('userID', '=', $request->userID)->get();
-        return $this->sendResponse(CouresResource::collection($success), 'Post retrieved successfully.');
+        $success = Post::where('userID', '=', $request->userID)->get();
+        return $this->sendResponse(PostResource::collection($success), 'Post retrieved successfully.');
     }
    
     /**

@@ -64,6 +64,6 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/course/create', [CouresController::class, 'store']);
     Route::post('/comment/create/course', [CommentCourseController::class, 'store']);
     Route::post('/course/edit/{id}', [CouresController::class, 'update']);
-    Route::get('/get/course/{id}', [CouresController::class, 'getCourse']);
-    Route::get('/get/post/{id}', [PostController::class, 'getPost']);
+    Route::post('/get/course/user', [CouresController::class, 'getCourse']);
+    Route::post('/get/post/user', [PostController::class, 'getPost']);
 });
