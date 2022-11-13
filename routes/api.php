@@ -62,7 +62,7 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/comment/create', [CommentController::class, 'store']);
     Route::post('/posts/edit/{id}', [PostController::class, 'update']);
     Route::post('/course/create', [CouresController::class, 'store']);
-    Route::post('/comment/create/course'. [CommentCourseController::class, 'store']);
+    Route::post('/comment/create/course', [CommentCourseController::class, 'store']);
     Route::post('/course/edit/{id}', [CouresController::class, 'update']);
     Route::post('/get/course/{id}', [CouresController::class, 'getCourse']);
     Route::post('/get/post/{id}', [PostController::class, 'getPost']);
