@@ -52,7 +52,7 @@ Route::controller(CommentController::class)->group(function() {
 Route::controller(CouresController::class)->group(function() {
     Route::post('/course', [CouresController::class, 'index']);
     Route::get('/course/{id}', [CouresController::class, 'show']);
-    ROute::get('/course/popular', [CouresController::class, 'popularPost']);
+    Route::get('/course/popular', [CouresController::class, 'popularPost']);
 });
 
         
@@ -64,5 +64,6 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/course/create', [CouresController::class, 'store']);
     Route::post('/comment/create/course'. [CommentCourseController::class, 'store']);
     Route::post('/course/edit/{id}', [CouresController::class, 'update']);
-
+    Route::post('/get/course/{id}', [CouresController::class, 'getCourse']);
+    Route::post('/get/post/{id}', [PostController::class, 'getPost']);
 });

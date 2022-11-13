@@ -133,6 +133,12 @@ class PostController extends BaseController
         
         dd($searchPost);
     }
+
+    public function getPost(Request $request)
+    {
+        $success = Coures::where('userID', '=', $request->userID)->get();
+        return $this->sendResponse(CouresResource::collection($success), 'Post retrieved successfully.');
+    }
    
     /**
      * Remove the specified resource from storage.

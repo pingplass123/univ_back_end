@@ -32,6 +32,12 @@ class CouresController extends BaseController
         return $this->sendResponse($comment, 'Get all records.');
     }
 
+    public function getCourse(Request $request)
+    {
+        $success = Coures::where('userID', '=', $request->userID)->get();
+        return $this->sendResponse(CouresResource::collection($success), 'course retrieved successfully.');
+    }
+
     
 
     /**
