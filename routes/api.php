@@ -45,7 +45,6 @@ Route::controller(CommentController::class)->group(function() {
     Route::get('/comment/{id}',[CommentController::class, 'show']);
     Route::post('course/comment', [CommentCourseController::class, 'index']);
     Route::get('course/comment/{id}',[CommentCourseController::class, 'show']);
-
 });
 
 //Public Route API Course
@@ -66,4 +65,6 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/course/edit/{id}', [CouresController::class, 'update']);
     Route::post('/get/course/user', [CouresController::class, 'getCourse']);
     Route::post('/get/post/user', [PostController::class, 'getPost']);
+
+    
 });

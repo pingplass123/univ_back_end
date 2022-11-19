@@ -48,7 +48,7 @@ class CommentCourseController extends BaseController
         }
         
         $comment = CouresComment::create([
-            'couresID'=> request('postID',$request),
+            'couresID'=> request('couresID',$request),
             'description' => request('description'),
             'score' => request('score'),
             'userID' => Auth::id(),
