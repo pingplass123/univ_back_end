@@ -56,7 +56,7 @@ class CommentCourseController extends BaseController
         ]);
     
         
-        return $this->sendResponse(new CommentResource($comment), 'Comment created successfully.');
+        return $this->sendResponse($comment, 'Comment created successfully.');
 
     }
 
