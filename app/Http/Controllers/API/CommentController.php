@@ -116,10 +116,10 @@ class CommentController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $success['delete'] = Comment::where('id', '=', $request->id)->delete();
-        return $this->sendResponse($success, 'Comment Post deleted successfully.');
+        DB::delete('DELETE FROM comment WHERE id = ?', [$id]);
+        return $this->sendResponse([], 'Comment Post deleted successfully.');
     }
 
 
