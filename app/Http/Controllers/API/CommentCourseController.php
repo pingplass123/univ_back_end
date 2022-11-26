@@ -118,7 +118,7 @@ class CommentCourseController extends BaseController
      */
     public function destroy($id)
     {
-        DB::delete('DELETE FROM comment_coures WHERE id = ?', [$id]);
+        DB::delete('DELETE FROM coures_comments WHERE id = ?', [$id]);
         return $this->sendResponse([], 'Comment  Course deleted successfully.');
     }
 
