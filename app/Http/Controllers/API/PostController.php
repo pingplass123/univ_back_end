@@ -146,10 +146,10 @@ class PostController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
+        $post = Post::find($id);
         $post->delete();
-   
         return $this->sendResponse([], 'Post deleted successfully.');
     }
 }

@@ -145,10 +145,10 @@ class CouresController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Coures $coures)
+    public function destroy($id)
     {
+        $coures = Coures::find($id);
         $coures->delete();
-   
-        return $this->sendResponse([], 'course deleted successfully.');
+        return $this->sendResponse([], 'Course deleted successfully.');
     }
 }
