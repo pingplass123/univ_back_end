@@ -65,6 +65,6 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/course/edit/{id}', [CouresController::class, 'update']);
     Route::post('/get/course/user', [CouresController::class, 'getCourse']);
     Route::post('/get/post/user', [PostController::class, 'getPost']);
-    Route::delete('/delete/comment/post/{id}', [PostController::class, 'destroy']);
-    Route::delete('/delete/comment/course/{id}', [CouresController::class, 'destroy']);
+    Route::delete('/delete/comment/post/{id}', [CommentController::class, 'destroy']);
+    Route::delete('/delete/comment/course/{id}', [CommentCourseController::class, 'destroy']);
 });
