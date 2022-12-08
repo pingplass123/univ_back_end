@@ -148,7 +148,7 @@ class CouresController extends BaseController
     public function destroy($id)
     {
         $coures = Coures::find($id);
-        $all_comment = Comment::where('couresID', '=', $id)->get();
+        $all_comment = CouresComment::where('couresID', '=', $id)->get();
         
         foreach($all_comment as $comment)
         {
