@@ -26,15 +26,21 @@ class RegisterController extends BaseController
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
         }
+
+        if (User::where('email', '=', Input::get('email'))->exists()) {
+            $error['message'] = 'Sorry user already exists';
+            return $this->sendResponse($error, 'Sorry user already exists');
+         }else {
+            $input = $request->all();
+            $input['password'] = bcrypt($input['password']);
+            $user = User::create($input);
+            $success['token'] =  $user->createToken('MyApp')->plainTextToken;
+            $success['name'] =  $user->name;
+            $success['id'] = $user->id; 
+            return $this->sendResponse($success, 'User register successfully.');
+         }
    
-        $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
-        $user = User::create($input);
-        $success['token'] =  $user->createToken('MyApp')->plainTextToken;
-        $success['name'] =  $user->name;
-        $success['id'] = $user->id;
-        
-        return $this->sendResponse($success, 'User register successfully.');
+       
     }
    
     /**
