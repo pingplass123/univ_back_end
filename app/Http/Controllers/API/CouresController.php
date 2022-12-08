@@ -148,6 +148,13 @@ class CouresController extends BaseController
     public function destroy($id)
     {
         $coures = Coures::find($id);
+        $all_comment = Comment::where('couresID', '=', $id)->get();
+        
+        foreach($all_comment as $comment)
+        {
+            $comment->delete();
+        }
+
         $coures->delete();
         return $this->sendResponse([], 'Course deleted successfully.');
     }
