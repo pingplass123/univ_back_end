@@ -149,6 +149,13 @@ class PostController extends BaseController
     public function destroy($id)
     {
         $post = Post::find($id);
+        $all_comment = Comment::where('postID', '=', $id)->get();
+        
+        foreach($all_comment as $comment)
+        {
+            $comment->delete();
+        }
+
         $post->delete();
         return $this->sendResponse([], 'Post deleted successfully.');
     }
