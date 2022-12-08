@@ -63,7 +63,7 @@ class RegisterController extends BaseController
             return $this->sendResponse($success, 'User login successfully.');
         } 
         else{ 
-            return $this->sendError('อีเมล์หรือรหัสผ่านไม่ถูกต้อง.', ['error'=>'อีเมล์หรือรหัสผ่านไม่ถูกต้อง']);
+            return $this->sendError('Email or password is incorrect.', ['error'=>'Email or password is incorrect.']);
         } 
     }
 
