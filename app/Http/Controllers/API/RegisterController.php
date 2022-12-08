@@ -27,7 +27,7 @@ class RegisterController extends BaseController
             return $this->sendError('Validation Error.', $validator->errors());       
         }
 
-        if (User::where('email', '=', Input::get('email'))->exists()) {
+        if (User::where('email', '=', $request->get('email'))->exists()) {
             $error['message'] = 'Sorry user already exists';
             return $this->sendResponse($error, 'Sorry user already exists');
          }else {
