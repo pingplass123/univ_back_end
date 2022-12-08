@@ -148,7 +148,8 @@ class PostController extends BaseController
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
+
+        $post = Post::where('id', $id);
         $post->delete();
         return $this->sendResponse([], 'Post deleted successfully.');
     }

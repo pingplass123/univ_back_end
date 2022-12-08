@@ -28,8 +28,7 @@ class RegisterController extends BaseController
         }
 
         if (User::where('email', '=', $request->get('email'))->exists()) {
-            $error['message'] = 'Sorry user already exists';
-            return $this->sendResponse($error, 'Sorry user already exists');
+            return $this->sendResponse([], 'Sorry user already exists');
          }else {
             $input = $request->all();
             $input['password'] = bcrypt($input['password']);
